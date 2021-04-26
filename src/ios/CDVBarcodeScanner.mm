@@ -791,6 +791,7 @@ parentViewController:(UIViewController*)parentViewController
 }
 
 - (AVCaptureVideoOrientation)interfaceOrientationToVideoOrientation:(UIInterfaceOrientation)orientation {
+    
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
             return AVCaptureVideoOrientationPortrait;
@@ -803,6 +804,7 @@ parentViewController:(UIViewController*)parentViewController
         default:
             return AVCaptureVideoOrientationPortrait;
    }
+   
 }
 
 //--------------------------------------------------------------------------
@@ -970,9 +972,9 @@ parentViewController:(UIViewController*)parentViewController
         CGContextSetStrokeColorWithColor(context, color.CGColor);
         CGContextSetLineWidth(context, RETICLE_WIDTH);
         CGContextBeginPath(context);
-        CGFloat lineOffset = (CGFloat) (RETICLE_OFFSET+(0.5*RETICLE_WIDTH));
-        CGContextMoveToPoint(context, lineOffset, RETICLE_SIZE/2);
-        CGContextAddLineToPoint(context, RETICLE_SIZE-lineOffset, (CGFloat) (0.5*RETICLE_SIZE));
+        CGFloat lineOffset = (CGFloat) (RETICLE_OFFSET+(20.0*RETICLE_WIDTH));
+        CGContextMoveToPoint(context, lineOffset, RETICLE_SIZE/9);
+        CGContextAddLineToPoint(context, RETICLE_SIZE-lineOffset, (CGFloat) (50*RETICLE_SIZE));
         CGContextStrokePath(context);
     }
 
@@ -985,7 +987,7 @@ parentViewController:(UIViewController*)parentViewController
                                        RETICLE_OFFSET,
                                        RETICLE_OFFSET,
                                        RETICLE_SIZE-2*RETICLE_OFFSET,
-                                       RETICLE_SIZE-2*RETICLE_OFFSET
+                                       RETICLE_SIZE-1*RETICLE_OFFSET
                                        )
                             );
     }
